@@ -1,0 +1,49 @@
+{% extends 'vehicle/customerbase.html' %}
+{% block content %}
+
+	<!-- main content -->
+	<div class="wrapper">
+
+<!-- ****** table  start ********** -->
+		<div class="row">
+			<div class="col-12 col-m-12 col-sm-12">
+				<div class="card">
+					<div class="card-header">
+						<h3 style="color:red; text-align:center" >Mechanic Details
+						</h3>
+
+					</div>
+					<div class="card-content">
+						<table>
+							<thead>
+                <tr>
+                  <th>Name</th>
+                  <th>Picture</th>
+                  <th>Skill</th>
+				  <th>Contact</th>
+                  
+                 
+
+                </tr>
+							</thead>
+							<tbody>
+								{% for enq in mechanic %}
+								<tr>
+									<td>{{ enq.user }}</td>
+									<td><img src="{{ enq.profile_pic.url }}" height="40px" width="40px" /></td>
+									<td>{{ enq.skill }}</td>
+									<td>{{ enq.mobile }}</td>  <!-- Corrected closing td tag -->
+								</tr>
+							{% endfor %}
+							
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+<!-- ****** table start ********** -->
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+	</div>
+	<!-- end main content -->
+{% endblock content %}
